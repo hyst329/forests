@@ -18,26 +18,26 @@ df$Wilderness_Area = apply(df, 1, function(x)
 df[12:55] = NULL
 df$Soil_Type = factor(df$Soil_Type)
 df$Wilderness_Area = factor(df$Wilderness_Area)
-df$Cover_Type = factor(df$Cover_Type)
+#df$Cover_Type = factor(df$Cover_Type)
 library("mgcv")
 glm0 = glm(
   Cover_Type ~ .,
   data = df,
-  family = binomial()
+  family = poisson(link="log")
 )
 summary(glm0)
 glm1 = glm(
-  Cover_Type ~ Elevation + Aspect + Vertical_Distance_To_Hydrology
-  + Hillshade_Noon + Hillshade_3pm +
-    Horizontal_Distance_To_Fire_Points,
+  Cover_Type ~ Elevation + Aspect + Hillshade_9am
+  + Hillshade_Noon + Soil_Type +
+    Horizontal_Distance_To_Fire_Points + Wilderness_Area,
   data = df,
-  family = binomial()
+  family = poisson(link="log")
 )
 summary(glm1)
 gam1 = gam(
   Cover_Type ~ s(Elevation) + Aspect + Vertical_Distance_To_Hydrology
-  + Hillshade_Noon + Hillshade_3pm,
+  + Hillshade_Noon + Hillshade_3pm + Wilderness_Area,
   data = df,
-  family = binomial()
+  family = poisson(link="log")
 )
 summary(gam1)

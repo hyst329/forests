@@ -1,0 +1,11 @@
+{
+    "projectPath": "H:/R/forests/report",
+    "title": "LaTeX-Plus Project",
+    "root": "report.tex",
+    "program": "xelatex",
+    "latexmkOptions": "-bibtex -pdf -shell-escape",
+    "output": ".latex",
+    "openOutput": "true",
+    "postAction": "link",
+    "postPath": ""
+}

@@ -1,7 +1,3 @@
 .RData
 .Rhistory
-report/*.aux
-report/*.log
-report/*.out
-report/*.synctex.gz
-report/*.pdf
+report/.latex
