@@ -41,7 +41,7 @@ gam1 = gam(
   family = poisson(link="log")
 )
 summary(gam1)
-df$Cover_Type = df$Cover_Type -
+df$Cover_Type = df$Cover_Type - 1
 gam2 = gam(
   list(Cover_Type ~ s(Elevation) + Aspect + Vertical_Distance_To_Hydrology
   + Hillshade_Noon + Hillshade_3pm + Wilderness_Area,
