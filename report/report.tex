@@ -192,6 +192,10 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 R-sq.(adj) =  0.391   Deviance explained = 38.9%
 UBRE = -0.32875  Scale est. = 1         n = 15120
 \end{verbatim}
+\begin{figure}
+\includegraphics{gam1}
+\caption{Пуассоновская GAM-модель}
+\end{figure}
 AIC данной модели равен 57273.77.
 
 Как видим, GAM-модель также годится для описания зависимой переменной Cover\_Type.
@@ -287,6 +291,11 @@ Deviance explained = 60.2%
 
 AIC данной модели равен 19240.19, что в 4 раза меньше предыдущих --- делаем
 вывод, что данная модель подходит нам больше всего.
+\begin{figure}
+\includegraphics{gam2}
+\caption{Мультиномиальная GAM-модель}
+\end{figure}
+\newpage
 \section{Листинг кода на R}
 \verbatiminput{../forests.r}
 \end{document}
